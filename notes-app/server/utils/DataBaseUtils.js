@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-// import Note from '../models/Note';
+import '../models/Note';
 
 const Note = mongoose.model('Note');
 
