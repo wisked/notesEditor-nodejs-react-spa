@@ -10,7 +10,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel',
-                exclude: [/node_modules/, /src/]
+                exclude: [/node_modules/, /src/],
+                query: {
+                    presets: ['react', 'es2015', 'stage-3']
+                }
             },
             {
                 test: /\.css$/,
