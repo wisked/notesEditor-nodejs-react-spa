@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 
+import '../styles/NoteEditor.less';
 
 class NotesEditor extends React.Component {
     constructor() {
