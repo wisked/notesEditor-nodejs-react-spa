@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-import { apiPrefix } from '../../etc/config.json';
+// import { apiPrefix } from '../../etc/config.json';
+
+const apiPrefix = "http://localhost:8080";
 
 export default {
     listNotes() {
@@ -8,7 +10,8 @@ export default {
     },
 
     createNote(data) {
-        return axios.post(apiPrefix + '/notes', data);
+        const req = apiPrefix + '/notes';
+        return axios.post(req, data);
     },
 
     deleteNote(noteId) {
