@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// import { apiPrefix } from '../../etc/config.json';
+import { apiPrefix } from '../../etc/config.json';
 
-const apiPrefix = "http://localhost:8080";
+// const apiPrefix = "http://localhost:8080";
 
 export default {
     listNotes() {
