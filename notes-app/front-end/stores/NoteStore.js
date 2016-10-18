@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 
-import Dispatcher from '../dispatcher/AppDispatcher';
+import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppConstants from '../constants/AppConstants';
 
 const CHANGE_EVENT = 'change';
@@ -32,6 +32,9 @@ const TaskStore = Object.assign({}, EventEmitter.prototype, {
     },
     addChangeListener(callback) {
         this.on(CHANGE_EVENT, callback);
+    },
+    removeChangeListener(callback) {
+        this.removeListener(CHANGE_EVENT, callback);
     }
 });
 
