@@ -67,13 +67,6 @@ class NotesEditor extends React.Component {
                     </div>
 
                 </MuiThemeProvider>
-                {/* <textarea
-                    placeholder="input text"
-                    rows={5}
-                    className="NoteEditor__text"
-                    value={this.state.text}
-                    onChange={this.handleTextChange.bind(this)}
-                    /> */}
                 <div className="NoteEditor__footer">
                 <ColorPicker
                     value={this.state.color}
