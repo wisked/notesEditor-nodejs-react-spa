@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
-
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import TextField from 'material-ui/TextField';
 import ColorPicker from './ColorPicker';
 
 import '../styles/NoteEditor.less';
@@ -44,20 +45,35 @@ class NotesEditor extends React.Component {
     render () {
         return (
             <div className="NotesEditor">
-                <input
-                    type="text"
-                    className="NoteEditor__title"
-                    placeholder="Enter title"
-                    value={this.state.title}
-                    onChange={this.handleTitleChange.bind(this)}
-                    />
-                <textarea
+
+                <MuiThemeProvider>
+                    <div>
+                        <TextField
+                            // hintText="Hint Text"
+                            floatingLabelText="Note naame"
+                            floatingLabelFixed={true}
+                            value={this.state.title}
+                            onChange={this.handleTitleChange.bind(this)}
+                        />
+                        <br />
+                        <TextField
+                            hintText="Type note text"
+                            floatingLabelText="Input note text"
+                            multiLine={true}
+                            rows={2}
+                            value={this.state.text}
+                            onChange={this.handleTextChange.bind(this)}
+                        />
+                    </div>
+
+                </MuiThemeProvider>
+                {/* <textarea
                     placeholder="input text"
                     rows={5}
                     className="NoteEditor__text"
                     value={this.state.text}
                     onChange={this.handleTextChange.bind(this)}
-                    />
+                    /> */}
                 <div className="NoteEditor__footer">
                 <ColorPicker
                     value={this.state.color}
