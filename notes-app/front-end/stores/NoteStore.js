@@ -48,7 +48,7 @@ AppDispatcher.register(function(action) {
         }
         case AppConstants.LOAD_NOTES_SUCCESS: {
             _isLoading = true;
-            _notes.action.notes.map(formatNote);
+            _notes = action.notes.map(formatNote);
             _loadingError = null;
 
             TaskStore.emitChange();
